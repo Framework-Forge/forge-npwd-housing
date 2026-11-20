@@ -1,0 +1,81 @@
+import { PropertyData, PropertyWithAccess } from '../types/property';
+
+export const MockOwnedProperties: PropertyData[] = [
+  {
+    property_id: '1',
+    owner: 'FORGE1234',
+    street: 'Alta Street 24',
+    region: 'Downtown Vinewood',
+    shell: 'furnitured_midapart',
+    for_sale: 0,
+    price: 150000,
+    has_access: ['KEY001', 'KEY002'],
+    admin_access: ['KEY001'],
+    extra_imgs: [],
+    tax_data: {
+      luz: { label: 'Energia Elétrica', amount: 250, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 3 },
+      agua: { label: 'Água e Saneamento', amount: 120, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 4 },
+      iptu: { label: 'IPTU Municipal', amount: 800, intervalDays: 14, balance: 800, nextDueAt: Date.now() - 86400000 },
+      security: { label: 'Monitoramento 24h', amount: 350, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 5, active: true },
+    },
+  },
+  {
+    property_id: '2',
+    owner: 'FORGE1234',
+    street: 'Eclipse Blvd 102',
+    region: 'Rockford Hills',
+    shell: 'modern_luxury_mansion',
+    for_sale: 1,
+    price: 850000,
+    has_access: [],
+    admin_access: [],
+    extra_imgs: [],
+    tax_data: {
+      luz: { label: 'Energia Elétrica', amount: 500, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 2 },
+      agua: { label: 'Água e Saneamento', amount: 200, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 2 },
+      iptu: { label: 'IPTU Municipal', amount: 1500, intervalDays: 14, balance: 0, nextDueAt: Date.now() + 86400000 * 10 },
+      security: { label: 'Monitoramento 24h', amount: 450, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 2, active: true },
+    },
+  },
+];
+
+export const MockAccessProperties: PropertyWithAccess[] = [
+  {
+    property_id: '3',
+    owner: 'OTHER999',
+    street: 'Spanish Ave 5',
+    region: 'West Vinewood',
+    shell: 'tier1_apartment',
+    for_sale: 0,
+    price: 90000,
+    has_access: ['FORGE1234'],
+    admin_access: ['FORGE1234'],
+    accessType: 'admin',
+    extra_imgs: [],
+    tax_data: {
+      luz: { label: 'Energia Elétrica', amount: 150, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 5 },
+      agua: { label: 'Água e Saneamento', amount: 80, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 5 },
+      iptu: { label: 'IPTU Municipal', amount: 400, intervalDays: 14, balance: 0, nextDueAt: Date.now() + 86400000 * 8 },
+      security: { label: 'Monitoramento 24h', amount: 200, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 5, active: false },
+    },
+  },
+  {
+    property_id: '4',
+    owner: 'FRIEND777',
+    street: 'Innocence Blvd 12',
+    region: 'Strawberry',
+    shell: 'lowend_apartment',
+    for_sale: 0,
+    price: 45000,
+    has_access: ['FORGE1234'],
+    admin_access: [],
+    accessType: 'key',
+    extra_imgs: [],
+    tax_data: {
+      luz: { label: 'Energia Elétrica', amount: 90, intervalDays: 7, balance: 90, nextDueAt: Date.now() - 3600000 },
+      agua: { label: 'Água e Saneamento', amount: 50, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 6 },
+      iptu: { label: 'IPTU Municipal', amount: 250, intervalDays: 14, balance: 0, nextDueAt: Date.now() + 86400000 * 12 },
+      security: { label: 'Monitoramento 24h', amount: 150, intervalDays: 7, balance: 0, nextDueAt: Date.now() + 86400000 * 6, active: false },
+    },
+  },
+];
